@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="Logo.png">
+  <title>QR Code Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="card">
+    <img src="laravel qrcode.png" alt="laravel qrcode.png">
+    <form id="form">
+      <label for="URL">
+        <h2>URL: </h2>
+      </label>
+      <input type="text" id="URL" placeholder="Enter an URL or text" required>
+      <label for="modes">
+        <h2>Modes: </h2>
+      </label>
+      <select name="modes" id="modes">
+        <option value="1">Basic</option>
+        <option value="2" selected>Medium</option>
+        <option value="3">Advanced</option>
+      </select>
+      <button id="submit"><h1>Generate QR Code</h1></button>
+    </form>
+    <div id="qrCodeContainer">QR Code</div>
+    <div class="download">
+      <span>Download:</span>
+      <li>PNG</li>
+      <li>JPG</li>
+    </div>
+  </div>
+  <script src="qr-code-styling.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
