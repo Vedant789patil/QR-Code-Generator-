@@ -6,8 +6,8 @@ const qrContainer = document.querySelector('#qrCodeContainer');
 let download = document.querySelectorAll('.download li');
 
 let properties = {
-  height: 200,
-  width: 200,
+  height: 250,
+  width: 250,
   type: "svg",
   margin: 10,
   data: '',
@@ -31,7 +31,22 @@ let properties = {
   }
 }
 
+function adjustQrCodeSize() {
+  const width = window.innerWidth;
+
+  if (width <= 480) {
+    // Mobile size
+    properties.width = 250;
+    properties.height = 250;
+  } else {
+    // Desktop size
+    properties.width = 400;
+    properties.height = 400;
+  }
+}
+
 generate.onclick = () => {
+  adjustQrCodeSize();
   generateQr();
 };
 
@@ -49,14 +64,12 @@ mode.addEventListener('change', (event) => {
       properties.cornersDotOptions.type = 'square';
       break;
     case '2':
-      console.log("2");
       properties.dotsOptions.color = '#505ADC';
       properties.dotsOptions.type = 'extra-rounded';
       properties.cornersSquareOptions.type = 'extra-rounded';
       properties.cornersDotOptions.type = 'dot';
       break;
     case '3':
-      console.log("3");
       properties.dotsOptions.color = '#505ADC';
       properties.dotsOptions.type = 'dots';
       properties.cornersSquareOptions.type = 'dot';
